@@ -18,11 +18,17 @@ import "strings"
 
 func ProcessString(s string) string {
 
-	vogais := []string{"A", "a", "E", "e", "I", "i", "O", "o", "U", "u"}
+	var feito string
 
+	vogais := []string{"A", "a", "E", "e", "I", "i", "O", "o", "U", "u"}
 	for _, vogal := range vogais {
 		s = strings.ReplaceAll(s, vogal, "")
-
 	}
 
+	for _, letras := range s {
+		letraM := strings.ToLower(string(letras))
+
+		feito += "." + letraM
+	}
+	return feito
 }
